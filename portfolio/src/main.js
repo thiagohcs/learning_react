@@ -1,7 +1,7 @@
 import React from "react";
 import Home from "./components/home/home";
 import Contact from "./components/contact/contact";
-import NotFound from "./components/not-found/not-found";
+import NotFound from "./components/not_found/not_found";
 import { Container } from 'react-materialize';
 import { Switch, Route } from 'react-router-dom';
 
