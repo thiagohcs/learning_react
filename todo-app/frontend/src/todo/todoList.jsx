@@ -1,32 +1,34 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import IconButton from '../template/iconButton'
 
-export default props => {
+
+const TodoList = props => {
 
     const renderRows = () => {
         const list = props.list || []
         
-        return list.map(task => (
-            <tr key={task._id}>
-                <td className={task.done ? 'markedAsDone' : ''}>{task.description}</td>
+        return list.map(todo => (
+            <tr key={todo._id}>
+                <td className={todo.done ? 'markedAsDone' : ''}>{todo.description}</td>
                 <td>
                     <IconButton 
                         style="success" 
                         icon="check"
-                        hide={task.done}
-                        onClick={() => props.handleMarkAsDone(task)}>
+                        hide={todo.done}
+                        onClick={() => props.handleMarkAsDone(todo)}>
                     </IconButton>
                     <IconButton 
                         style="warning" 
                         icon="undo"
-                        hide={!task.done}
-                        onClick={() => props.handleMarkAsPending(task)}>
+                        hide={!todo.done}
+                        onClick={() => props.handleMarkAsPending(todo)}>
                     </IconButton>   
                     <IconButton 
                         style="danger" 
                         icon="trash-o"
-                        hide={!task.done}
-                        onClick={() => props.handleRemove(task)}>
+                        hide={!todo.done}
+                        onClick={() => props.handleRemove(todo)}>
                     </IconButton>
                 </td>
             </tr>
@@ -47,3 +49,8 @@ export default props => {
         </table>
     )
 }
+
+
+const mapStateToProps = state => ({ list: state.todo.list })
+
+export default connect(mapStateToProps) (TodoList)
