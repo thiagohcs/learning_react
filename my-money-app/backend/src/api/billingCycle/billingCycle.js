@@ -13,7 +13,7 @@ const creditSchema = new mongoose.Schema({
     }
 })
 
-const debitSchema = new mongoose.Schema({
+const debtSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'Informe o valor do débito!']
@@ -49,7 +49,7 @@ const billingCycleSchema = new mongoose.Schema({
         required: [true, 'Informe o ano do ciclo de pagamento']
     },
     credits: [creditSchema],
-    debits: [debitSchema]
+    debts: [debtSchema]
 })
 
 module.exports = restful.model('BillingCycle', billingCycleSchema)
