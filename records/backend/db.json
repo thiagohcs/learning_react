@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "name": "Thiago Henrique Candido",
+      "email": "thiago.hcs@hotmail.com",
+      "id": 1
+    },
+    {
+      "name": "Edilania Maria da Silva",
+      "email": "edilania.ms@live.com",
+      "id": 2
+    }
+  ]
+}
