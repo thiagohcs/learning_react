@@ -15,7 +15,6 @@ export function getList() {
 }
 
 export function create(values) {
-    console.log(values)
     return submit(values, 'post')
 }
 
